@@ -1,0 +1,42 @@
+SET !ERRORIGNORE YES
+SET !TIMEOUT_PAGE 30
+SET !VAR1 EVAL("var min = 6; var max = 10; var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; randomNumber;")
+SET !VAR2 EVAL("var min = 10; var max = 14; var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; randomNumber;")
+URL GOTO=http://addmefast.com/
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=A ATTR=TXT:Soundcloud<SP>Likes
+WAIT SECONDS={{!VAR1}}
+TAB T=1
+TAG POS=1 TYPE=DIV ATTR=TXT:Like
+TAG POS=2 TYPE=DIV ATTR=TXT:Like
+TAB T=2
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=BUTTON ATTR=CLASS:sc-button-like<SP>sc-button<SP>sc-button-medium<SP>sc-button-responsive
+WAIT SECONDS={{!VAR1}}
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS={{!VAR2}}
+TAB T=1
+TAG POS=1 TYPE=DIV ATTR=TXT:Like
+TAG POS=2 TYPE=DIV ATTR=TXT:Like
+TAB T=2
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=BUTTON ATTR=CLASS:sc-button-like<SP>sc-button<SP>sc-button-medium<SP>sc-button-responsive
+WAIT SECONDS={{!VAR1}}
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS={{!VAR2}}
+URL GOTO=http://addmefast.com/
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=A ATTR=TXT:Soundcloud<SP>Likes
+WAIT SECONDS={{!VAR1}}
+TAB T=1
+TAG POS=1 TYPE=DIV ATTR=TXT:Like
+TAG POS=2 TYPE=DIV ATTR=TXT:Like
+TAB T=2
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=BUTTON ATTR=CLASS:sc-button-like<SP>sc-button<SP>sc-button-medium<SP>sc-button-responsive
+WAIT SECONDS={{!VAR1}}
+TAB T=1
+TAB CLOSEALLOTHERS
+REFRESH
