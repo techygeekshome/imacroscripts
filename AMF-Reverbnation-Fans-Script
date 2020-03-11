@@ -1,0 +1,44 @@
+SET !ERRORIGNORE YES
+SET !TIMEOUT_PAGE 6
+SET !VAR1 EVAL("var min = 2; var max = 3; var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; randomNumber;")
+SET !VAR2 EVAL("var min = 10; var max = 12; var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; randomNumber;")
+URL GOTO=http://addmefast.com/
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=A ATTR=TXT:Reverbnation<SP>Fans
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=DIV ATTR=TXT:Become<SP>a<SP>Fan
+TAB T=2
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=A ATTR=TXT:Become<SP>a<SP>Fan
+EVENT TYPE=CLICK SELECTOR="#page_object_profile_header>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>DIV>A" BUTTON=0
+WAIT SECONDS=2
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS={{!VAR2}}
+TAG POS=1 TYPE=DIV ATTR=TXT:Become<SP>a<SP>Fan
+TAB T=2
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=A ATTR=TXT:Become<SP>a<SP>Fan
+EVENT TYPE=CLICK SELECTOR="#page_object_profile_header>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>DIV>A" BUTTON=0
+WAIT SECONDS=2
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS={{!VAR2}}
+TAG POS=1 TYPE=DIV ATTR=TXT:Become<SP>a<SP>Fan
+TAB T=2
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=A ATTR=TXT:Become<SP>a<SP>Fan
+EVENT TYPE=CLICK SELECTOR="#page_object_profile_header>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>DIV>A" BUTTON=0
+WAIT SECONDS=2
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS={{!VAR2}}
+TAG POS=1 TYPE=DIV ATTR=TXT:Become<SP>a<SP>Fan
+TAB T=2
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=A ATTR=TXT:Become<SP>a<SP>Fan
+EVENT TYPE=CLICK SELECTOR="#page_object_profile_header>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>DIV>A" BUTTON=0
+WAIT SECONDS=2
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS={{!VAR2}}
