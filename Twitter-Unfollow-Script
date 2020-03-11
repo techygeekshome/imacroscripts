@@ -1,4 +1,4 @@
-VERSION BUILD=1005 RECORDER=CR
+SET !ERRORIGNORE YES
 SET !VAR1 EVAL("var sec = 5; var max = 25; var randomNumber = Math.floor(Math.random() * (max - sec + 2)) + sec; randomNumber;")
 URL GOTO=https://twitter.com/TechyGeeks1/following
 WAIT SECONDS={{!VAR1}}
