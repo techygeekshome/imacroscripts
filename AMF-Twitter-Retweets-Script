@@ -1,0 +1,49 @@
+SET !ERRORIGNORE YES
+SET !TIMEOUT_PAGE 8
+SET !VAR1 EVAL("var min = 3; var max = 4; var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; randomNumber;")
+SET !VAR2 EVAL("var min = 4; var max = 5; var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; randomNumber;")
+SET !VAR3 EVAL("var min = 15; var max = 18; var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; randomNumber;")
+URL GOTO=http://addmefast.com/
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=A ATTR=TXT:Twitter<SP>Retweets
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=DIV ATTR=TXT:Retweet
+TAB T=2
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:retweet_btn_form ATTR=NAME:commit
+WAIT SECONDS={{!VAR1}}
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS={{!VAR3}}
+TAG POS=1 TYPE=DIV ATTR=TXT:Retweet
+TAB T=2
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:retweet_btn_form ATTR=NAME:commit
+WAIT SECONDS={{!VAR1}}
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS={{!VAR3}}
+TAG POS=1 TYPE=DIV ATTR=TXT:Retweet
+TAB T=2
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:retweet_btn_form ATTR=NAME:commit
+WAIT SECONDS={{!VAR1}}
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS={{!VAR3}}
+TAG POS=1 TYPE=DIV ATTR=TXT:Retweet
+TAB T=2
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:retweet_btn_form ATTR=NAME:commit
+WAIT SECONDS={{!VAR1}}
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS={{!VAR3}}
+TAG POS=1 TYPE=DIV ATTR=TXT:Retweet
+TAB T=2
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:retweet_btn_form ATTR=NAME:commit
+WAIT SECONDS={{!VAR1}}
+TAB T=1
+TAB CLOSEALLOTHERS
+REFRESH
