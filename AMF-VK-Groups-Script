@@ -1,0 +1,49 @@
+SET !ERRORIGNORE YES
+SET !TIMEOUT_PAGE 8
+SET !VAR1 EVAL("var min = 3; var max = 4; var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; randomNumber;")
+SET !VAR2 EVAL("var min = 4; var max = 5; var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; randomNumber;")
+SET !VAR3 EVAL("var min = 6; var max = 8; var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; randomNumber;")
+URL GOTO=http://addmefast.com/
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=A ATTR=TXT:Vkontakte<SP>Groups
+WAIT SECONDS={{!VAR2}}
+TAG POS=1 TYPE=DIV ATTR=TXT:Join
+WAIT SECONDS={{!VAR2}}
+TAB T=2
+TAG POS=1 TYPE=BUTTON ATTR=ID:join_button
+WAIT SECONDS={{!VAR3}}
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS={{!VAR3}}
+TAG POS=1 TYPE=DIV ATTR=TXT:Join
+WAIT SECONDS={{!VAR2}}
+TAB T=2
+TAG POS=1 TYPE=BUTTON ATTR=ID:join_button
+WAIT SECONDS={{!VAR3}}
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS={{!VAR3}}
+TAG POS=1 TYPE=DIV ATTR=TXT:Join
+WAIT SECONDS={{!VAR2}}
+TAB T=2
+TAG POS=1 TYPE=BUTTON ATTR=ID:join_button
+WAIT SECONDS={{!VAR3}}
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS={{!VAR3}}
+TAG POS=1 TYPE=DIV ATTR=TXT:Join
+WAIT SECONDS={{!VAR2}}
+TAB T=2
+TAG POS=1 TYPE=BUTTON ATTR=ID:join_button
+WAIT SECONDS={{!VAR3}}
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS={{!VAR3}}
+TAG POS=1 TYPE=DIV ATTR=TXT:Join
+WAIT SECONDS={{!VAR2}}
+TAB T=2
+TAG POS=1 TYPE=BUTTON ATTR=ID:join_button
+WAIT SECONDS={{!VAR3}}
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS={{!VAR3}}
