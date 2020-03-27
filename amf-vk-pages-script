@@ -1,0 +1,16 @@
+SET !ERRORIGNORE YES
+SET !TIMEOUT_PAGE 8
+SET !VAR1 EVAL("var min = 2; var max = 3; var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; randomNumber;")
+SET !VAR2 EVAL("var min = 4; var max = 5; var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; randomNumber;")
+SET !VAR3 EVAL("var min = 12; var max = 14; var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; randomNumber;")
+URL GOTO=https://addmefast.com
+WAIT SECONDS={{!VAR1}}
+TAG POS=1 TYPE=A ATTR=TXT:Vkontakte<SP>Pages
+WAIT SECONDS={{!VAR2}}
+TAG POS=1 TYPE=DIV ATTR=TXT:Follow
+WAIT SECONDS={{!VAR1}}
+TAB T=2
+TAG POS=1 TYPE=BUTTON ATTR=ID:public_subscribe
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS={{!VAR3}}
